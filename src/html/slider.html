@@ -6,9 +6,12 @@
 	<script src="../js/slider/slider.js"></script>
 </head>
 <body>
-	<div id="slider"></div>
+	<div id="slider1" style="height: 100px; left: 10px; position: absolute"></div>
+	<div id="slider2" style="height: 200px; left: 50px; position: absolute"></div>
+	<input type="text" data-slider="true" data-slider-range="100,500" data-slider-step="100" data-slider-snap="true">
 	<script>
-		createSlider($("#slider"),-5,5,1);
+		createSlider($("#slider1"),-5,5,1);
+		createSlider($("#slider2"),-5,5,1);
 	</script>
 </body>
 </html>

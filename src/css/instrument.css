@@ -1,0 +1,39 @@
+.instrument_frame{
+	width: 90px;
+	height: 80px;
+	display: absolute;
+	background-color: #ddd;
+	vertical-align: middle;
+	border: 2px #ccc inset;
+}
+
+.instrument_button{
+	margin: 0;
+	margin-top: 6px;
+	margin-left: 2px;
+	width: 64px;
+	height: 64px;
+	float: left;
+	border: 2px #ccc outset;
+}
+
+.instrument_button:hover{
+	border: 2px #fff outset;
+}
+
+.instrument_button:active{
+	border: 2px #ccc inset;
+}
+
+.instrument_slider{
+	margin: 0;
+	margin-top: 5px;
+	margin-left: 2px;
+	height: 70px;
+}
+
+body{
+	/*margin: 0;*/
+	padding: 0;
+	background-color: #e0e0e0;
+}
