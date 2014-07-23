@@ -39,14 +39,36 @@ function setProgress(barID,val,attri){
 	return bars[barID];
 }
 
-function setElement(barID,elementVal,atr){
+function setElement(barID,elementVal,attri){
 	var bar = bars[barID][0];
 	var barlength = $(bar).length;
+	
+	/*
 	if (elementVal > 0){
 		$(bar).slice(0,elementVal).css("background-color","white");
 	}
 	$(bar).slice(elementVal,elementVal+1).css("background-color","red");
 	$(bar).slice(elementVal+1,barlength+1).css("background-color","white");
+	/*/
+	if(!attri){
+		if (elementVal > 0){
+			$(bar).slice(0,elementVal).css("background-color","white");
+		}
+		$(bar).slice(elementVal,elementVal+1).css("background-color","red");
+		$(bar).slice(elementVal+1,barlength+1).css("background-color","white");
+	}else{
+		$(bar[elementVal]).css("background-color",$(bar[elementVal]).attr("color1"));
+		
+		if (elementVal > 0){
+			for(var i = 0; i < elementVal; i++){
+				$(bar[i]).css("background-color",$(bar[i]).attr("color0"));
+			}
+		}
+		for(var i = elementVal+1;  i < barlength; i++){
+			$(bar[i]).css("background-color",$(bar[i]).attr("color0"));
+		}
+	}
+	//*/
 	bars[barID]=[bar,2,elementVal];
 	return bars[barID];
 }
