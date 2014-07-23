@@ -5,7 +5,7 @@ function createProgressbar(replaceID){
 	if (!replaceID){
 		return false;
 	} else {
-		pbar = $("#"+replaceID+" td");
+		pbar = $(replaceID).find("td");
 		pbars++;
 		bars[pbars]=[pbar,0,0];
 		return pbars;
