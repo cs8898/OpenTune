@@ -1,0 +1,38 @@
+#sidebar{
+	text-align: center;
+	width: 11em;
+	background-color: red;
+	height: 100%;
+}
+
+.SidebarElement{
+	width:10em;
+	margin-top:0.5em;
+	margin-bottom:0.7em;
+	text-align: left;
+}
+
+.container { 
+	border:2px solid #ccc; 
+	width: 10em; 
+	height: 10em; 
+	overflow-y: auto; 
+	margin-bottom: 1em;
+	display: inline-block;
+}
+
+.container span {
+}
+
+.#sidebar .button{
+	text-align: center !important;
+}
+
+.container input{
+	float:right;
+}
+
+.container div{
+	display: inline-block;
+	width: 100%;
+}
