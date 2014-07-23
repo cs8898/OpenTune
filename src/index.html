@@ -136,9 +136,9 @@
 		function fixSize(){
 			$("#content").css("width",$(window).width()-$("#sidebar").width());
 			$("#content").css("left",$("#sidebar").width());
-			$(".ButtonLeiste").css("height",$(window).height()*0.17);
-			$(".SpielFlaeche").css("height",$(window).height()*0.75);
-			$(".BandNamediv").css("height",$(window).height()*0.08);
+			/*$(".ButtonLeiste").css("height",$(window).height()*0.17);
+			$(".BandNamediv").css("height",$(window).height()*0.08);*/
+			$(".SpielFlaeche").css("height",$(window).height()-($(".ButtonLeiste").height()+$(".BandNamediv").height()));
 		}
 		
 		function init(){
