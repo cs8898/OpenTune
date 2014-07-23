@@ -24,11 +24,11 @@
 .container span {
 }
 
-.#sidebar .button{
-	text-align: center !important;
+#sidebar .button{
+	text-align: center;
 }
 
-.container input{
+.container .checkboxC{
 	float:right;
 }
 
