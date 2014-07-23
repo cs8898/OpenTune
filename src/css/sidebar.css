@@ -1,8 +1,15 @@
 #sidebar{
 	text-align: center;
-	width: 11em;
+	width: 11em; 
 	background-color: red;
 	height: 100%;
+	float:left;
+}
+
+#content{
+	background-color:blue;
+	width:100%;
+	height:100%;
 }
 
 .SidebarElement{
@@ -35,4 +42,8 @@
 .container div{
 	display: inline-block;
 	width: 100%;
+}
+
+.SpielFlaeche {
+	
 }
