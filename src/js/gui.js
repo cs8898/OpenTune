@@ -60,7 +60,7 @@ function befuelleBesetzung() {
 
 function spieleInstrumentAb(id) {
 	var ins;
-	for (int i = 0; i < instrumente.length; i++) {
+	for (var i = 0; i < instrumente.length; i++) {
 		if (instrumente[i].id == id) {
 			ins = instrumente[i];
 			break;

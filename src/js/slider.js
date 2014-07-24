@@ -1,3 +1,3 @@
-function onSlide(){
-
+function onSlide(obj){
+	
 }
