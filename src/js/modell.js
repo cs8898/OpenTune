@@ -16,7 +16,8 @@ var instrumentVorlagen = [
 		"defaultX": 50,
 		"defaultY": 100
 	},
-];
+]; 
+
 
 //Vordefinierte Besetzungen
 var besetzungen = [
