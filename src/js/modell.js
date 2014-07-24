@@ -5,6 +5,14 @@ var instrumentVorlagen = [
 		"name": "Querflöte",
 		"anzahl": 1,
 		"maxAnzahl": 3,
+		"defaultX": 600,
+		"defaultY": 500
+	},
+	{
+		"type": "oboe",
+		"name": "Oboe",
+		"anzahl": 1,
+		"maxAnzahl": 3,
 		"defaultX": 500,
 		"defaultY": 500
 	},
@@ -84,33 +92,30 @@ var instrumentVorlagen = [
 
 //Vordefinierte Besetzungen
 var besetzungen = [
-	{ //Bigband
+	{
+		"name": "Bigband",
 		"instrumente":
 		[
-			{"type": "bariton","anzahl": 2}, 
-			{"type": "trompete","anzahl": 2},
-			{"type": "bass","anzahl": 2},
-			{"type": "posaune","anzahl": 2}, 
-			{"type": "Saxophon","anzahl": 2}, 
-			{"type": "piano","anzahl": 2}, 
-			{"type": "flöte","anzahl": 2}, 
-			{"type": "trombone","anzahl": 2},
-			{"type": "tuba","anzahl": 2},
-			{"type": "jagthorn","anzahl": 2},
-			{"type": "gitarre","anzahl": 2}
+			{"type": "sax", "anzahl": 2}, 
+			{"type": "trumpet", "anzahl": 2},
+			{"type": "trombone", "anzahl": 2},
+			{"type": "piano", "anzahl": 1}, 
+			{"type": "guitar", "anzahl": 1}, 
+			{"type": "ebass", "anzahl": 1}
 		]
 	},
-	{ //Orchester
+	{
+		"name": "Blasorchester",
 		"instrumente":
 		[
-			{"type": "bariton","anzahl": 2}, 
-			{"type": "trompete","anzahl": 2},
-			{"type": "posaune","anzahl": 2}, 
-			{"type": "Saxophon","anzahl": 2}, 
-			{"type": "flöte","anzahl": 2}, 
-			{"type": "tromboe","anzahl": 2},
-			{"type": "tuba","anzahl": 2},
-			{"type": "jagthorn","anzahl": 2}
+			{"type": "flute", "anzahl": 1}, 
+			{"type": "oboe", "anzahl": 1},
+			{"type": "clarinet", "anzahl": 2},
+			{"type": "sax", "anzahl": 2}, 
+			{"type": "trumpet", "anzahl": 2}, 
+			{"type": "baritone", "anzahl": 2}, 
+			{"type": "trombone", "anzahl": 2},
+			{"type": "tuba", "anzahl": 1},
 		]
 	}
 ];
