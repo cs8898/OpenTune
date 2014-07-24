@@ -8,6 +8,7 @@ $(document).ready(function() {
 		befuelleInstrumentenVorlageListe();
 	});
 	fill_difficulty_sel();
+	$("#stimmung").click(aendereStimmung);
 });
 
 //Befüllen der Instrumentenvorlage-Liste
@@ -69,6 +70,15 @@ function spieleInstrumentAb(id) {
 	spieleAb(ins, 0);
 }
 
+function aendereStimmung()
+{
+	if($("#stimmgeraet").css("display") == "none")
+	{
+		$("#stimmgeraet").css("display","block");
+	}else{
+		$("#stimmgeraet").css("display","none");
+	}
+}
 function spieleAlleInstrumenteAb() {
 	for (var i = 0; i < instrumente.length; i++) {
 		var ins = instrumente[i];
