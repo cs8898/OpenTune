@@ -81,7 +81,7 @@ function spieleInstrumentAb(id) {
 	clearTimeout(stimm_timeout);
 	stimm_timeout = setTimeout(function(){
 		setElement(stimmgeraetProgressID,-1,true);
-	}, 2000);
+	}, 4000);
 }
 
 function spieleStimmgabelAb() {
@@ -107,6 +107,11 @@ function spieleAlleInstrumenteAb() {
 		//spiele Audiodatei ab										
 		spieleAb(ins, delay);	
 	}
+}
+
+function Auswertungausfuehren() {
+	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
+	spieleAlleInstrumenteAb();
 }
 
 function spieleAb(ins, delay) {

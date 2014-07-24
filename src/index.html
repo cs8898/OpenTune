@@ -12,6 +12,7 @@
   <script type="text/javascript" src="js/slider.js"></script>
   <script type="text/javascript" src="js/random.js"></script>
   <script type="text/javascript" src="js/game.js"></script>
+  <script type="text/javascript" src="js/logic.js"></script>
 </head>
 
 <body style="margin:0; padding: 0; border:0; width:100%; height:100%;">
@@ -35,7 +36,7 @@
         Training
       </option>
     </select><br />-->
-    <input class="SidebarElement button" type="button" name="Playbutton" value="Play" onclick="startGame();"/><br />
+    <input class="SidebarElement button" type="button" name="Playbutton" value="Start" onclick="startGame();"/><br />
 
     <div id="instrumentVorlagen" class="container SidebarElement">
       <!-- <div>
@@ -47,7 +48,7 @@
   <div id="content">
 	<div class="BandNamediv">
 		<div class="BandNameText">
-			Hallo
+			OpenTune
 		</div>
 	</div>
 	<div class="SpielFlaeche">
@@ -84,7 +85,7 @@
 				<br />-->
 				<input class="button" type="button" name="AbspielButton" value="Abspielen" onClick="spieleAlleInstrumenteAb();" />
 				<br />
-				<input class="button" type="button" name="Auswertungsbutton" value="Auswerten" /><br />
+				<input class="button" type="button" name="Auswertungsbutton" value="Auswerten" onClick="Auswertungausfuehren();" /><br />
 			</div>
 		</div>
 	</div>
