@@ -70,6 +70,10 @@ function spieleInstrumentAb(id) {
 	spieleAb(ins, 0);
 }
 
+function spieleStimmgabelAb() {
+		new Audio("audio/tuningfork442.mp3").play();
+}
+
 function aendereStimmung()
 {
 	if($("#stimmgeraet").css("display") == "none")
