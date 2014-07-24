@@ -80,8 +80,13 @@ function spieleAb(audio, delay) {
 	}, delay);
 }
 
-//TEST
+/*TEST
 $(document).ready(function() {
 	spieleAb("audio/trombone-0.mp3", 1000);
-	spieleAb("audio/tuba+40.mp3", 1200);
+	spieleAb("audio/tuba+40.mp3", 1800);
 });
+<<<<<<< HEAD
+=======
+
+*/
+>>>>>>> 754aaf936c6c7e560ef49c173717ff4ee8a03f3c
