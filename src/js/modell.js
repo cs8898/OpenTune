@@ -156,6 +156,8 @@ var instrumente = [
 	},
 ];
 
+
+
 //var img = "img/" + instrument.type + ".png";
 /* var audio = "audio/" + instrument.type;
 if (instrument.tuning < 0)
