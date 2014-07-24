@@ -1,9 +1,9 @@
 .instrument_frame{
 	width: 90px;
 	height: 80px;
-	display: absolute;
+	position: absolute;
 	background-color: #ddd;
-	vertical-align: middle;
+	/*vertical-align: middle;*/
 	border: 2px #ccc inset;
 }
 
