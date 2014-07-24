@@ -6,5 +6,5 @@ function fortschritt() {
 		derzeitigerStand += abs(instrumente[i].tuning);
 	}
 	var ergebnis = 1 - (derzeitigerStand / worstcase);	
-	return
+	return ergebnis;
 }
