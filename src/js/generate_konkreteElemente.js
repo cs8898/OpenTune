@@ -48,9 +48,12 @@ function getNextInstrumentPosByID(aus,instrID){
 }
 
 function draw_instrument_frames(){
+	min = schwierigkeiten[spielStatus.schwierigkeit].
+	max =
+	step =
 	$(".SpielFlaeche").text("");
 	for (var i = 0; i < instrumente.length; i++){
-		$(".SpielFlaeche").append('<div style="left: ' + instrumente[i].x + 'px; top: ' + (parseInt($(".SpielFlaeche").offset().top) + parseInt(instrumente[i].y)) + 'px;" class="instrument_frame" id="'+instrumente[i].id+'"><input type="image" src="./img/'+instrumente[i].type+'.png" class="instrument_button"><input id="'+instrumente[i].id+'_slider" class="instrument_slider" type="range" orient="vertical"></div>');
+		$(".SpielFlaeche").append('<div style="left: ' + instrumente[i].x + 'px; top: ' + (parseInt($(".SpielFlaeche").offset().top) + parseInt(instrumente[i].y)) + 'px;" class="instrument_frame" id="inst_'+instrumente[i].id+'"><input id="inst_'+instrumente[i].id+'_button" type="image" src="./img/'+instrumente[i].type+'.png" class="instrument_button"><input id="inst_'+instrumente[i].id+'_slider" class="instrument_slider" min="'+min+'" max="'+max+'" step="'+step+'" type="range" orient="vertical"></div>');
 	} //IMPORTANT TO ADD min, max, step!!!!!
 }
 
