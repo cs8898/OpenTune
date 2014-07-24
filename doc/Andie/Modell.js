@@ -61,14 +61,14 @@ var schwierigkeiten = [
 		"step": 40,
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
-		"time": 25,
+		"time": 15,
 		"anzahlHilfen": 0.33
 	},
 	{ //mittel
-		"step": 10,
+		"step": 20,
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
-		"time": 20,
+		"time": 15,
 		"anzahlHilfen": 0.33
 	},
 	{ //schwer
@@ -76,7 +76,7 @@ var schwierigkeiten = [
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
 		"time": 15,
-		"anzahlHilfen": 0.33
+		"anzahlHilfen": 0.25
 	}
 ];
 
