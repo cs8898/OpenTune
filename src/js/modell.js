@@ -1,21 +1,85 @@
 //Mögliche Instrumente
 var instrumentVorlagen = [
 	{
+		"type": "flute",
+		"name": "Querflöte",
+		"anzahl": 1,
+		"maxAnzahl": 3,
+		"defaultX": 500,
+		"defaultY": 500
+	},
+	{
 		"type": "clarinet",
 		"name": "Klarinette",
 		"anzahl": 2,
-		"maxAnzahl": 2,
-		"defaultX": 50,
-		"defaultY": 150
+		"maxAnzahl": 3,
+		"defaultX": 300,
+		"defaultY": 500
 	},
 	{
-		"type": "bariton",
+		"type": "sax",
+		"name": "Saxophon",
+		"anzahl": 2,
+		"maxAnzahl": 3,
+		"defaultX": 100,
+		"defaultY": 500
+	},
+	{
+		"type": "trumpet",
+		"name": "Trompete",
+		"anzahl": 2,
+		"maxAnzahl": 3,
+		"defaultX": 100,
+		"defaultY": 300
+	},
+	{
+		"type": "baritone",
 		"name": "Bariton",
+		"anzahl": 2,
+		"maxAnzahl": 3,
+		"defaultX": 300,
+		"defaultY": 300
+	},
+	{
+		"type": "trombone",
+		"name": "Posaune",
+		"anzahl": 2,
+		"maxAnzahl": 3,
+		"defaultX": 500,
+		"defaultY": 300
+	},
+	{
+		"type": "tuba",
+		"name": "Tuba",
 		"anzahl": 1,
-		"maxAnzahl": 1,
-		"defaultX": 50,
+		"maxAnzahl": 2,
+		"defaultX": 600,
+		"defaultY": 300
+	},
+	{
+		"type": "piano",
+		"name": "Klavier",
+		"anzahl": 0,
+		"maxAnzahl": 2,
+		"defaultX": 200,
 		"defaultY": 100
 	},
+	{
+		"type": "guitar",
+		"name": "Gitarre",
+		"anzahl": 0,
+		"maxAnzahl": 2,
+		"defaultX": 400,
+		"defaultY": 100
+	},
+	{
+		"type": "ebass",
+		"name": "E-Bass",
+		"anzahl": 0,
+		"maxAnzahl": 2,
+		"defaultX": 600,
+		"defaultY": 100
+	}
 ];
 
 //Vordefinierte Besetzungen
