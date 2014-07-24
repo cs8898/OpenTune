@@ -48,8 +48,8 @@ function getNextInstrumentPosByID(aus,instrID){
 }
 
 function draw_instrument_frames(){
-	var min = -80;
-	var max = 80;
+	var min = -40;
+	var max = 40;
 	var step = schwierigkeiten[spielStatus.schwierigkeit].step;
 	$(".SpielFlaeche").text("");
 	for (var i = 0; i < instrumente.length; i++){
