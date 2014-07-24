@@ -81,7 +81,7 @@ function spieleInstrumentAb(id) {
 	clearTimeout(stimm_timeout);
 	stimm_timeout = setTimeout(function(){
 		setElement(stimmgeraetProgressID,-1,true);
-	}, 2000);
+	}, 4000);
 }
 
 function aendereStimmung()
