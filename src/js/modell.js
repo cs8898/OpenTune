@@ -78,6 +78,7 @@ var schwierigkeiten = [
 //Konkreten Instrumente
 var instrumente = [
 	{
+		"id": "bariton_1",
 		"type": "bariton",
 		"tuning": -50,
 		"starttuning": -50,
