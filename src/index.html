@@ -56,13 +56,13 @@
 		<div style="width:100%; height: 100%;">
 			<div class="leftButtons">
 				<!--Hilfen: <p id="help_counter" style="display: inline;">III</p>
-				<br />-->
-				<input id="stimmung" class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
-				<br /><!--
-				<input class="button" type="button" name="GesamtTest" value="Test" />-->
+				<br />-->				
+				<input type="image" src="./img/tuneing-fork.png" id="fork_button" class="instrument_button" onClick="spieleStimmgabelAb()">
+				<!--<input class="button" type="button" name="GesamtTest" value="Test" />-->
 			</div>
 			<div class="centerButtons">
-				<div>Stimmgerät:</div>
+				<div><input id="stimmung" class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
+				</div>
 				<div id="stimmgeraet" style="display: none;">
 					<table style="border: 2px #ccc inset;">
 						<td color0="#ccc" color1="red">-5</td>
@@ -82,7 +82,7 @@
 			<div class="rightButtons">
 				<!--<input class="button" type="button" name="Bewegungsbutton" value="Bewegen" />
 				<br />-->
-				<input class="button" type="button" name="AbspielButton" value="Abspielen" />
+				<input class="button" type="button" name="AbspielButton" value="Abspielen" onClick="spieleAlleInstrumenteAb();" />
 				<br />
 				<input class="button" type="button" name="Auswertungsbutton" value="Auswerten" /><br />
 			</div>

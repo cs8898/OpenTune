@@ -84,6 +84,10 @@ function spieleInstrumentAb(id) {
 	}, 4000);
 }
 
+function spieleStimmgabelAb() {
+		new Audio("audio/tuningfork442.mp3").play();
+}
+
 function aendereStimmung()
 {
 	if($("#stimmgeraet").css("display") == "none")
@@ -98,7 +102,7 @@ function spieleAlleInstrumenteAb() {
 		var ins = instrumente[i];
 		//generiere zufällige verzögerung
 		var min = 1;
-		var max = 200;
+		var max = 100;
 		var delay = (Math.random() * (max - min)) + min;
 		//spiele Audiodatei ab										
 		spieleAb(ins, delay);	
