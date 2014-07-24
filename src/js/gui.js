@@ -1,16 +1,60 @@
-$(document).ready(befuelleInstrumentenVorlageListe);
+$(document).ready(function() {
+	//setup
+	befuelleBesetzung();
+	befuelleInstrumentenVorlageListe();
+	//registriere events
+	$("#besetzungen").change(function(){
+		leereInstrumentenVorlageListe();
+		befuelleInstrumentenVorlageListe();
+	});
+});
 
 //Befüllen der Instrumentenvorlage-Liste
 function befuelleInstrumentenVorlageListe() {
-	var liste = $("#instrumentVorlagen");
-	for (var i = 0; i < instrumentVorlagen.length; i++) {
-		var insName = instrumentVorlagen[i].name;
-		var insMax = instrumentVorlagen[i].maxAnzahl;
-		var insAnzahl = instrumentVorlagen[i].anzahl;
-		var insId = "vorlage_" + instrumentVorlagen[i].type; //z.B. "vorlage_baritone"
-		var s = '<div id="' + insId + '"><span>' + insName + '</span> <input class="checkboxC" type="number" min="0" max="' + insMax + '" value="' + insAnzahl + '"/></div><br />';
-		$(liste).append(s);
+	var liste = $("#instrumentVorlagen");	
+	var value = $("#besetzungen").val();
+	if(value == 2)
+	{
+		for(var i = 0; i < instrumentVorlagen.length; i++)
+		{
+			var insName = instrumentVorlagen[i].name;
+			var insMax = instrumentVorlagen[i].maxAnzahl;
+			var insAnzahl = instrumentVorlagen[i].anzahl;
+			var insId = "vorlage_" + instrumentVorlagen[i].type; //z.B. "anzahl_baritone"
+			var s = '<div id="' + insId + '"><span>' + insName + '</span> <input class="checkboxC" 				type="number" min="0" max="' + insMax + '" value="' + insAnzahl + '"/></div><br />';
+			$(liste).append(s);
+		}
 	}
+	else {
+		var art = besetzungen[value];
+		for (var i = 0; i < art.instrumente.length; i++)
+		{
+			var type = art.instrumente[i].type;
+			for(var y = 0; y < instrumentVorlagen.length; y++)
+			{
+				if(type == instrumentVorlagen[y].type)
+				{
+					instrumentVorlagen[y].anzahl = art.instrumente[i].anzahl;
+					var insName = instrumentVorlagen[y].name;
+					var insMax = instrumentVorlagen[y].maxAnzahl;
+					var insAnzahl = instrumentVorlagen[y].anzahl;
+					var insId = "vorlage_" + instrumentVorlagen[y].type; //z.B. "anzahl_baritone"
+					var s = '<div id="' + insId + '"><span>' + insName + '</span> <input class="checkboxC" type="number" min="0" max="' + insMax + '" value="' + insAnzahl + '"/></div><br />';
+					$(liste).append(s);
+				}
+			}
+		}
+	}
+}
+
+function leereInstrumentenVorlageListe() {
+	$("#instrumentVorlagen").find("*").remove();	
+}
+
+function befuelleBesetzung() {
+	$("#besetzungen").append(new Option("Bigband", 0));
+	$("#besetzungen").append(new Option("Blasorchester", 1));
+	$("#besetzungen").append(new Option("Eigene Auswahl", 2));
 }
 
 function spieleAlleInstrumenteAb() {
