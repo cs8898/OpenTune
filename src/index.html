@@ -1,4 +1,5 @@
-<head>
+Ôªø<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>OpenTune</title>
   <link rel="stylesheet" href="css/sidebar.css" type="text/css" />
   <script type="text/javascript" src="./js/jquery.js"></script>
@@ -10,7 +11,7 @@
 <body style="margin:0; padding: 0; border:0; width:100%; height:100%;">
   <div id="sidebar">
     Art:<br />
-    <select id ="besetzung" size="1" class="DropDown SidebarElement">
+    <select id ="besetzungen" size="1" class="DropDown SidebarElement">
       <!--<option>
         Eigene Auswahl
       </option> -->
@@ -62,13 +63,13 @@
 			<div class="leftButtons">
 				Hilfen: <p id="help_counter" style="display: inline;">III</p>
 				<br />
-				<input class="button" type="button" name="Stimmger‰t" value="Stimmger‰t" />
+				<input class="button" type="button" name="Stimmger√§t" value="Stimmger√§t" />
 				<br />
 				<input class="button" type="button" name="GesamtTest" value="Test" />
 			</div>
 			<div class="centerButtons">
-				<div>Stimmger‰t:</div>
-				<div id="stimmger‰t">
+				<div>Stimmger√§t:</div>
+				<div id="stimmger√§t">
 					<table style="border: 2px #ccc inset;">
 						<td color0="#ccc" color1="red">-3</td>
 						<td color0="#ccc" color1="orange">-2</td>
@@ -90,7 +91,7 @@
 		</div>
 	</div>
   <script>
-		var stimmger‰tProgressID = -1;
+		var stimmger√§tProgressID = -1;
 		function fixSize(){
 			$("#content").css("width",$(window).width()-$("#sidebar").width());
 			$("#content").css("left",$("#sidebar").width());
@@ -101,8 +102,8 @@
 		
 		function init(){
 			fixSize();
-			stimmger‰tProgressID = createProgressbar($("#stimmger‰t"));
-			setElement(stimmger‰tProgressID,-1,true);
+			stimmger√§tProgressID = createProgressbar($("#stimmger√§t"));
+			setElement(stimmger√§tProgressID,-1,true);
 		}
 		
 		$(document).ready(init);
