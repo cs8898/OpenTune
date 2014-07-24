@@ -7,6 +7,7 @@ $(document).ready(function() {
 		leereInstrumentenVorlageListe();
 		befuelleInstrumentenVorlageListe();
 	});
+	fill_difficulty_sel();
 });
 
 //Befüllen der Instrumentenvorlage-Liste

@@ -9,6 +9,7 @@
   <script type="text/javascript" src="js/gui.js"></script>
   <script type="text/javascript" src="js/generate_konkreteElemente.js"></script>
   <script type="text/javascript" src="js/difficulty.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
 </head>
 
 <body style="margin:0; padding: 0; border:0; width:100%; height:100%;">
@@ -24,23 +25,22 @@
 	
     </select><br />
     Modus:<br />
-    <select size="1" class="DropDown SidebarElement" style="margin-bottom:5em">
-      <option>
+    <!--<select size="1" class="DropDown SidebarElement" style="margin-bottom:5em">
+	  <option>
         Arcade
       </option>
-
       <option>
         Training
       </option>
-    </select><br />
-    <input class="SidebarElement button" type="button" name="Playbutton" value="Play" /><br />
+    </select><br />-->
+    <input class="SidebarElement button" type="button" name="Playbutton" value="Play" onclick="startGame();"/><br />
 
     <div id="instrumentVorlagen" class="container SidebarElement">
       <!-- <div>
         <span>This is checkbox</span> <input class="checkboxC" type="number" />
       </div><br /> -->
-    </div><input class="SidebarElement button" type="button" name="Helpbutton" value=
-    "Hilfe" />
+    </div>
+	<!--<input class="SidebarElement button" type="button" name="Helpbutton" value="Hilfe" />-->
   </div>
   <div id="content">
 	<div class="BandNamediv">
@@ -53,11 +53,11 @@
 	<div class="ButtonLeiste">
 		<div style="width:100%; height: 100%;">
 			<div class="leftButtons">
-				Hilfen: <p id="help_counter" style="display: inline;">III</p>
-				<br />
+				<!--Hilfen: <p id="help_counter" style="display: inline;">III</p>
+				<br />-->
 				<input class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
-				<br />
-				<input class="button" type="button" name="GesamtTest" value="Test" />
+				<br /><!--
+				<input class="button" type="button" name="GesamtTest" value="Test" />-->
 			</div>
 			<div class="centerButtons">
 				<div>Stimmgerät:</div>
@@ -74,8 +74,8 @@
 				</div>
 			</div>
 			<div class="rightButtons">
-				<input class="button" type="button" name="Bewegungsbutton" value="Bewegen" />
-				<br />
+				<!--<input class="button" type="button" name="Bewegungsbutton" value="Bewegen" />
+				<br />-->
 				<input class="button" type="button" name="AbspielButton" value="Abspielen" />
 				<br />
 				<input class="button" type="button" name="Auswertungsbutton" value="Auswerten" /><br />
