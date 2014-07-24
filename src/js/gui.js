@@ -3,7 +3,10 @@ $(document).ready(function() {
 	befuelleBesetzung();
 	befuelleInstrumentenVorlageListe();
 	//registriere events
-	$("#besetzungen").change(function(){leereInstrumentenVorlageListe();befuelleInstrumentenVorlageListe();});
+	$("#besetzungen").change(function(){
+	leereInstrumentenVorlageListe();
+	befuelleInstrumentenVorlageListe();
+	});
 });
 
 //Befüllen der Instrumentenvorlage-Liste
