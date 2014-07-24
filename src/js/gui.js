@@ -1,3 +1,5 @@
+var stimm_timeout = null;
+
 $(document).ready(function() {
 	//setup
 	befuelleBesetzung();
@@ -68,6 +70,18 @@ function spieleInstrumentAb(id) {
 		}
 	}
 	spieleAb(ins, 0);
+	var stimm_element = (ins.tuning/10)+5;
+	if (stimm_element <= 0){
+		setElement(stimmgeraetProgressID,0,true);
+	} else if(stimm_element >= 10) {
+		setElement(stimmgeraetProgressID,10,true);
+	} else {
+		setElement(stimmgeraetProgressID,stimm_element,true);
+	}
+	clearTimeout(stimm_timeout);
+	stimm_timeout = setTimeout(function(){
+		setElement(stimmgeraetProgressID,-1,true);
+	}, 2000);
 }
 
 function spieleStimmgabelAb() {
@@ -91,7 +105,7 @@ function spieleAlleInstrumenteAb() {
 		var max = 100;
 		var delay = (Math.random() * (max - min)) + min;
 		//spiele Audiodatei ab										
-		spieleAb(ins, delay);		
+		spieleAb(ins, delay);	
 	}
 }
 
