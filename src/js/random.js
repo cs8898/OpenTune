@@ -4,5 +4,6 @@ function generate_randomTuneing(){
 	for (var i = 0; i < instrumente.length; i++){
 		var rnd_step = Math.floor(Math.random()*anzahlSteps)-Math.floor(anzahlSteps/2);
 		instrumente[i].starttuning = rnd_step*s.step; //random tuneing
+		instrumente[i].tuning = instrumente[i].starttuning;
 	}
 }
