@@ -2,9 +2,9 @@
 	width: 90px;
 	height: 80px;
 	position: absolute;
-	background-color: #42b8b3;
+	background-color: #64c9c5;
 	/*vertical-align: middle;*/
-	border: 1px #89d7d4 solid;
+	border: 2px #89d7d4 solid;
 	border-radius: 3px;
 	box-shadow: 2px 2px 7px #42b8b3;
 }
@@ -12,7 +12,7 @@
 .instrument_button{
 	margin: 0;
 	margin-top: 6px;
-	margin-left: 2px;
+	margin-left: 4px;
 	width: 64px;
 	height: 64px;
 	float: left;

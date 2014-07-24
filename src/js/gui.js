@@ -49,6 +49,9 @@ function befuelleInstrumentenVorlageListe() {
 			}
 		}
 	}
+	
+	//every Second bg-color: #89d7d4
+	$(".container div:odd").css("background-color","#89d7d4");
 }
 
 function leereInstrumentenVorlageListe() {
