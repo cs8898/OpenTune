@@ -122,6 +122,7 @@ var besetzungen = [
 
 var schwierigkeiten = [
 	{ //einfach
+		"name": "Einfach",
 		"step": 40,
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
@@ -129,6 +130,7 @@ var schwierigkeiten = [
 		"anzahlHilfen": 0.33 //pro Instrument
 	},
 	{ //mittel
+		"name": "Mittel",
 		"step": 20,
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
@@ -136,6 +138,7 @@ var schwierigkeiten = [
 		"anzahlHilfen": 0.33
 	},
 	{ //schwer
+		"name": "Schwer",
 		"step": 10,
 		"minStartTuning": -40,
 		"maxStartTuning": +40,
@@ -155,8 +158,6 @@ var instrumente = [
 		"y": 100
 	},
 ];
-
-
 
 //var img = "img/" + instrument.type + ".png";
 /* var audio = "audio/" + instrument.type;
