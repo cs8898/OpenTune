@@ -171,8 +171,8 @@ audio += ".mp3";
 var spielStatus = 
 {
 	"status": "auswahl", //auswahl | spiel | auswertung
-	"modus": "arcade", // arcade | training
-	"time": 20, //im Trainingsmodus: -1
+	"modus": "training", // arcade | training
+	"time": -1, //im Trainingsmodus: -1
 	"hilfen": 2, //verbleibende Hilfen
 	"schwierigkeit": -1, // Ohne Definition
 };
