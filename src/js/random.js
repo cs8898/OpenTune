@@ -1,7 +1,8 @@
 function generate_randomTuneing(){
-	var rnd = 0;
+	var s = schwierigkeiten[spielStatus.schwierigkeit];
+	var anzahlSteps = (s.startTuningRange * 2) / s.step + 1;
 	for (var i = 0; i < instrumente.length; i++){
-		rnd = ((Math.random()/1)*schwierigkeiten[spielStatus.schwierigkeit].range*2)-schwierigkeiten[spielStatus.schwierigkeit].range;
-		instrumente[i].starttuning = rnd;
+		var rnd_step = Math.floor(Math.random()*anzahlSteps)-Math.floor(anzahlSteps/2);
+		instrumente[i].starttuning = rnd_step*s.step; //random tuneing
 	}
 }

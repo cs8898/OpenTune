@@ -48,8 +48,8 @@ function getNextInstrumentPosByID(aus,instrID){
 }
 
 function draw_instrument_frames(){
-	var min = -40;
-	var max = 40;
+	var min = schwierigkeiten[spielStatus.schwierigkeit].startTuningRange*(-1);
+	var max = schwierigkeiten[spielStatus.schwierigkeit].startTuningRange;
 	var step = schwierigkeiten[spielStatus.schwierigkeit].step;
 	$(".SpielFlaeche").text("");
 	for (var i = 0; i < instrumente.length; i++){
