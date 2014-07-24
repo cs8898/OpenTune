@@ -123,22 +123,19 @@ var besetzungen = [
 var schwierigkeiten = [
 	{ //einfach
 		"step": 40,
-		"minStartTuning": -40,
-		"maxStartTuning": +40,
+		"startTuningRange": 40, //d.h. Startstimmung zwischen -x und +x Cent
 		"time": 15, //pro Instrument
 		"anzahlHilfen": 0.33 //pro Instrument
 	},
 	{ //mittel
 		"step": 20,
-		"minStartTuning": -40,
-		"maxStartTuning": +40,
+		"startTuningRange": 40,
 		"time": 20,
 		"anzahlHilfen": 0.33
 	},
 	{ //schwer
 		"step": 10,
-		"minStartTuning": -40,
-		"maxStartTuning": +40,
+		"startTuningRange": 40,
 		"time": 15,
 		"anzahlHilfen": 0.33
 	}
@@ -147,14 +144,16 @@ var schwierigkeiten = [
 //Konkreten Instrumente
 var instrumente = [
 	{
-		"id": "bariton_1",
-		"type": "bariton",
+		"id": "baritone_1",
+		"type": "baritone",
 		"tuning": -50,
 		"starttuning": -50,
 		"x": 50,
 		"y": 100
 	},
 ];
+
+
 
 //var img = "img/" + instrument.type + ".png";
 /* var audio = "audio/" + instrument.type;
