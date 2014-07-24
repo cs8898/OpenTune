@@ -23,7 +23,7 @@ function befuelleInstrumentenVorlageListe() {
 		{
 			var insName = instrumentVorlagen[i].name;
 			var insMax = instrumentVorlagen[i].maxAnzahl;
-			var insAnzahl = instrumentVorlagen[i].anzahl;
+			var insAnzahl = 0; //instrumentVorlagen[i].anzahl; //wir starten immer mit 0 bei "Eigene Auswahl"
 			var insId = "vorlage_" + instrumentVorlagen[i].type; //z.B. "anzahl_baritone"
 			var s = '<div id="' + insId + '"><span>' + insName + '</span> <input class="checkboxC" 				type="number" min="0" max="' + insMax + '" value="' + insAnzahl + '"/></div><br />';
 			$(liste).append(s);
@@ -110,6 +110,11 @@ function spieleAlleInstrumenteAb() {
 		//spiele Audiodatei ab										
 		spieleAb(ins, delay);	
 	}
+}
+
+function Auswertungausfuehren() {
+	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
+	spieleAlleInstrumenteAb();
 }
 
 function spieleAb(ins, delay) {

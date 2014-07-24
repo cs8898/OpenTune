@@ -3,7 +3,7 @@ function fortschritt() {
 	var derzeitigerStand = 0;
 	var worstcase = 80 * instrumente.length;
 	for (i = 0; i < instrumente.length; i++) {
-		derzeitigerStand += abs(instrumente[i].tuning);
+		derzeitigerStand += Math.abs(instrumente[i].tuning);
 	}
 	var ergebnis = 1 - (derzeitigerStand / worstcase);	
 	return ergebnis;
