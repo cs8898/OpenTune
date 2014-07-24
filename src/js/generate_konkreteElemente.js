@@ -1,9 +1,10 @@
-var instrument_frame_width = 90;
-var instrument_frame_height = 80;
+var instrument_frame_width = 94;
+var instrument_frame_height = 84;
 
 function generate_konkreteElemente(){
 	var VarInstrumentListe = $("#instrumentVorlagen div");
-	var instrcounter = 0;
+	var instrID = 0;
+	instrumente = [];
 	
 	for ( var i = 0; i < VarInstrumentListe.length; i++){
 		type = $(VarInstrumentListe[i]).attr("id").replace("vorlage_",""); 
@@ -11,7 +12,7 @@ function generate_konkreteElemente(){
 		count = parseInt($(VarInstrumentListe[i]).find($("input[type='number']")).val());
 		//alert(type+"|"+name+"|"+count);
 		
-		for (var a = 1; a <= count; i++){
+		for (var a = 1; a <= count; a++){
 			instrumente.push({
 				"id": "instr_"+instrID,
 				"type": type,
@@ -31,21 +32,31 @@ function getNextInstrumentPosByID(aus,instrID){
 	var maxVer = Math.floor($(".SpielFlaeche").height()/instrument_frame_height);
 	var VerGap = ($(".SpielFlaeche").height()-(maxVer * instrument_frame_height))/(maxVer+1);
 	
-	if (instrID <= maxHor){
-		xN = instrID;
-		yN = 0;
-	} else {
-		xN = maxHor%instrID;
-		yN = (instrID-yN)/maxHor;
-	}
+
+	xN = instrID%maxHor;
+	yN = Math.floor(instrID/maxHor);
 	
-	x = HorGap + (HorGap + (instrument_frame_width+HorGap) * ( xN - 1 ) );
-	y = VerGap + (VerGap + (instrument_frame_height+HorGap) * (yN - 1 ) );
+	x = HorGap + (instrument_frame_width+HorGap) * xN;
+	y = VerGap + (instrument_frame_height+VerGap) * yN;
 	if(aus == "x"){
-		return x;
+		return Math.round(x);
 	} else if(aus == "y"){
-		return y;
+		return Math.round(y);
 	} else {
 		return [x,y];
 	}
 }
+
+function draw_instrument_frames(){
+	$(".SpielFlaeche").text("");
+	for (var i = 0; i < instrumente.length; i++){
+		$(".SpielFlaeche").append('<div style="left: ' + instrumente[i].x + 'px; top: ' + (parseInt($(".SpielFlaeche").offset().top) + parseInt(instrumente[i].y)) + 'px;" class="instrument_frame" id="'+instrumente[i].id+'"><input type="image" src="./img/'+instrumente[i].type+'.png" class="instrument_button"><input id="'+instrumente[i].id+'_slider" class="instrument_slider" type="range" orient="vertical"></div>');
+	} //IMPORTANT TO ADD min, max, step!!!!!
+}
+
+/*
+	<div class="instrument_frame" id="in_1_frame">
+		<input type="image" src="./img/ebass.png" id="in_1_button" class="instrument_button" >
+		<input id="in_1_slider" class="instrument_slider" type="range" min="-10" max="10" step="5" orient="vertical">
+	</div>
+*/
