@@ -174,6 +174,7 @@ var spielStatus =
 	"modus": "arcade", // arcade | training
 	"time": 20, //im Trainingsmodus: -1
 	"hilfen": 2, //verbleibende Hilfen
+	"schwierigkeit": -1, // Ohne Definition
 };
 
 
