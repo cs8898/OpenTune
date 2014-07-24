@@ -109,6 +109,10 @@ function spieleAlleInstrumenteAb() {
 	}
 }
 
+function Auswertungausfuehren() {
+	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
+}
+
 function spieleAb(ins, delay) {
 	//generiere Audiopfad
 	var audio = "audio/" + ins.type;
