@@ -1,7 +1,7 @@
 #sidebar{
 	text-align: center;
 	width: 13em; 
-	background-color: red;
+	background-color: #d5f1f0;
 	height: 100%;
 	float:left;
 }
@@ -28,6 +28,8 @@
 	margin-bottom: 1em;
 	padding: 0.1em;
 	display: inline-block;
+	background-color: #64c9c5;
+	box-shadow: 1px 2px 5px #42b8b3;
 }
 
 .container span {
@@ -55,7 +57,7 @@
 }
 
 .BandNamediv{
-	background-color:yellow;
+	background-color:#64c9c5;
 	text-align:center;
 	width:100%;
 	height:48px;
@@ -70,7 +72,7 @@
 }
 
 .SpielFlaeche {
-	background-color:green;
+	background-color:#89d7d4;
 	width:100%;
 	height:75%;
 }
@@ -78,7 +80,7 @@
 .ButtonLeiste{
 	/*font-weight:bold;*/
 	font-size:1.4em;
-	background-color:pink;
+	background-color:#42b8b3;
 	width:100%;
 	height:110px;
 	text-align: center;

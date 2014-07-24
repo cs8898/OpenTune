@@ -2,9 +2,11 @@
 	width: 90px;
 	height: 80px;
 	position: absolute;
-	background-color: #ddd;
+	background-color: #42b8b3;
 	/*vertical-align: middle;*/
-	border: 2px #ccc inset;
+	border: 1px #89d7d4 solid;
+	border-radius: 3px;
+	box-shadow: 2px 2px 7px #42b8b3;
 }
 
 .instrument_button{
@@ -15,6 +17,7 @@
 	height: 64px;
 	float: left;
 	border: 2px #ccc outset;
+	border-radius: 4px;
 }
 
 .instrument_button:hover{
