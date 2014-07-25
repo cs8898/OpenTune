@@ -1,10 +1,18 @@
 var stimm_timeout = null;
+var helpAnzahl = null;
 
 $(document).ready(function() {
 	//setup
 	befuelleBesetzung();
+	befuelleModus();
+	berechneHilfe();
+	zeigeHilfen();
 	befuelleInstrumentenVorlageListe();
 	//registriere events
+	$("#modus_sel").change(function(){
+		berechneHilfe();		
+		zeigeHilfen();
+	});
 	$("#besetzungen").change(function(){
 		leereInstrumentenVorlageListe();
 		befuelleInstrumentenVorlageListe();
@@ -64,6 +72,26 @@ function befuelleBesetzung() {
 	$("#besetzungen").append(new Option("Eigene Auswahl", 2));
 }
 
+function befuelleModus() {
+	$("#modus_sel").append(new Option("Arcade", 0));
+	$("#modus_sel").append(new Option("Training", 1));
+}
+
+function berechneHilfe(){
+	var modus = spielStatus.modus = $("#modus_sel").val()
+	if(modus == 0)
+	{
+		var s = schwierigkeiten[spielStatus.schwierigkeit];
+		helpAnzahl = Math.round(s.anzahlHilfen * instrumentVorlagen.length);	
+	}else if(modus == 1){
+		helpAnzahl = 0;
+	}
+}
+function zeigeHilfen()
+{
+		$("#help_counter").text(""+helpAnzahl);	
+}
+
 function spieleInstrumentAb(id) {
 	var ins;
 	for (var i = 0; i < instrumente.length; i++) {
@@ -73,19 +101,28 @@ function spieleInstrumentAb(id) {
 		}
 	}
 	spieleAb(ins, 0);
-	var stimm_element = (ins.tuning/10)+5;
-	if (stimm_element <= 0){
-		setElement(stimmgeraetProgressID,0,true);
-	} else if(stimm_element >= 10) {
-		setElement(stimmgeraetProgressID,10,true);
-	} else {
-		setElement(stimmgeraetProgressID,stimm_element,true);
+
+	//stimmgerät
+	if($("#stimmgeraet").css("display") == "block" && helpAnzahl > 0)
+	{
+		var stimm_element = (ins.tuning/10)+5;
+		if (stimm_element <= 0){
+			setElement(stimmgeraetProgressID,0,true);
+		} else if(stimm_element >= 10) {
+			setElement(stimmgeraetProgressID,10,true);
+		} else {
+			setElement(stimmgeraetProgressID,stimm_element,true);
+		}
+		clearTimeout(stimm_timeout);
+		stimm_timeout = setTimeout(function(){
+			setElement(stimmgeraetProgressID,-1,true);
+		}, 4000);
+		helpAnzahl -= 1;
+		zeigeHilfen();
 	}
-	clearTimeout(stimm_timeout);
-	stimm_timeout = setTimeout(function(){
-		setElement(stimmgeraetProgressID,-1,true);
-	}, 4000);
 }
+
+
 
 function spieleStimmgabelAb() {
 		new Audio("audio/tuningfork442.mp3").play();

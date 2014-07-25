@@ -27,15 +27,13 @@
     <select id="difficulty_sel" size="1" class="DropDown SidebarElement">
 	
     </select><br />
-    <!--Modus:<br />
-    <select size="1" class="DropDown SidebarElement" style="margin-bottom:5em">
-	  <option>
+    Modus:<br />
+    <select id="modus_sel" size="1" class="DropDown SidebarElement" style="margin-bottom:5em">
+	<!--<option>
         Arcade
+      </option>-->
       </option>
-      <option>
-        Training
-      </option>
-    </select><br />-->
+    </select><br />
     <div id="instrumentVorlagen" class="container SidebarElement">
       <!-- <div>
         <span>This is checkbox</span> <input class="checkboxC" type="number" />
@@ -54,14 +52,16 @@
 	</div>
 	<div class="ButtonLeiste">
 		<div style="width:100%; height: 100%;">
-			<div class="leftButtons">
-				<!--Hilfen: <p id="help_counter" style="display: inline;">III</p>
-				<br />-->				
+			<div class="leftButtons">		
 				<input type="image" src="./img/tuneing-fork.png" id="fork_button" class="instrument_button" onClick="spieleStimmgabelAb()">
 				<!--<input class="button" type="button" name="GesamtTest" value="Test" />-->
 			</div>
 			<div class="centerButtons">
-				<div><input id="stimmung" class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
+				<div>
+				<span id ="help_label" style="display : inline;">Hilfen: </span>
+				<p id="help_counter" style="display: inline;"></p>
+				<br/>
+				<input id="stimmung" class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
 				</div>
 				<div id="stimmgeraet" style="display: none;">
 					<table style="border: 2px #ccc inset;">
