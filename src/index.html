@@ -3,7 +3,9 @@
   <title>OpenTune</title>
   <link rel="stylesheet" href="css/sidebar.css" type="text/css" />
   <link rel="stylesheet" href="css/instrument.css" type="text/css" />
-  <script type="text/javascript" src="./js/jquery.js"></script>
+  <link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/progressbar/progressbar.js"></script>
   <script type="text/javascript" src="js/modell.js"></script>
   <script type="text/javascript" src="js/gui.js"></script>
@@ -44,6 +46,7 @@
   </div>
   <div id="content">
 	<div class="BandNamediv">
+		<div id="timePBar"></div>
 		<div class="BandNameText">
 			OpenTune
 		</div>
@@ -52,9 +55,21 @@
 	</div>
 	<div class="ButtonLeiste">
 		<div style="width:100%; height: 100%;">
-			<div class="leftButtons">		
-				<input type="image" src="./img/tuneing-fork.png" id="fork_button" class="instrument_button" onClick="spieleStimmgabelAb()">
-				<!--<input class="button" type="button" name="GesamtTest" value="Test" />-->
+			<div class="leftButtons">
+				<!--Hilfen: <p id="help_counter" style="display: inline;">III</p>
+				<br />-->				
+				<div class="stimmgabel">
+					<input type="image" src="./img/tuneing-fork.png" class="instrument_button" onClick="spieleStimmgabelAb('_normal')">
+					<br/>Prim
+				</div>
+				<div class="stimmgabel">
+					<input type="image" src="./img/tuneing-fork.png" class="instrument_button" onClick="spieleStimmgabelAb('_quint')">
+					<br/>Quint
+				</div>
+				<div class="stimmgabel">
+					<input type="image" src="./img/tuneing-fork.png" class="instrument_button" onClick="spieleStimmgabelAb('_octave')">
+					<br/>Oktave
+				</div>
 			</div>
 			<div class="centerButtons">
 				<div>

@@ -122,10 +122,8 @@ function spieleInstrumentAb(id) {
 	}
 }
 
-
-
-function spieleStimmgabelAb() {
-		new Audio("audio/tuningfork442.mp3").play();
+function spieleStimmgabel(id) {
+		new Audio("audio/tuningfork442"+ id + ".mp3").play();
 }
 
 function aendereStimmung()
@@ -150,6 +148,7 @@ function spieleAlleInstrumenteAb() {
 }
 
 function Auswertungausfuehren() {
+	spielStatus.status = "auswertung";
 	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
 	spieleAlleInstrumenteAb();
 }
