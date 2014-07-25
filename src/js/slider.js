@@ -3,4 +3,10 @@ function onSlide(obj){
 	var slider_val = parseInt($(obj).val());
 	var abs_val = instrumente[instr_id].starttuning + slider_val;
 	instrumente[instr_id].tuning = abs_val;
+	stopAudio();
+}
+
+function stopAudio(instr_id)
+{
+	instrumente[instr_id].audio.pause();
 }
