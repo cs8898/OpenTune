@@ -87,7 +87,7 @@ function spieleInstrumentAb(id) {
 	}, 4000);
 }
 
-function spieleStimmgabelAb(id) {
+function spieleStimmgabel(id) {
 		new Audio("audio/tuningfork442"+ id + ".mp3").play();
 }
 
@@ -113,11 +113,19 @@ function spieleAlleInstrumenteAb() {
 }
 
 function Auswertungausfuehren() {
+	if (instrumente.length == 0) {
+		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Du hast doch noch gar nicht begonnen!</div>');
+	}
+	else
 	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
 	spieleAlleInstrumenteAb();
 }
 
 function spieleAb(ins, delay) {
+	//prüfe, ob audio bereits abgespielt wurde
+	if (ins.audio != null) {
+		ins.audio.pause();
+	}
 	//generiere Audiopfad
 	var audio = "audio/" + ins.type;
 	if (ins.tuning < 0)
@@ -127,9 +135,11 @@ function spieleAb(ins, delay) {
 	else
 		audio += "+" + ins.tuning;
 	audio += ".mp3";
+	//datei laden
+	ins.audio = new Audio(audio);
 	//verzögert abspielen
 	setTimeout(function() {
-		new Audio(audio).play();
+		ins.audio.play();
 	}, delay);
 }
 
