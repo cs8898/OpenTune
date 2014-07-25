@@ -83,8 +83,13 @@
 	font-size:1.4em;
 	background-color: #42b8b3;
 	width:100%;
-	height:110px;
+	height:6em;
 	text-align: center;
+}
+
+.Stimmgabel  {
+	float:left;
+	margin-right:0.5em;
 }
 
 .leftButtons{
