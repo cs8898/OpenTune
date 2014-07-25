@@ -9,8 +9,10 @@ function fill_difficulty_sel(){
 
 function startGameTimer(){
 	clearInterval(SecondTimer)
-	if (spielStatus.time > 0)
+	if (spielStatus.time > 0 && spielStatus.modus == "arcade"){
+		$("#timePBar").progressbar({"min": 0, "max": spielStatus.time});
 		SecondTimer = setInterval(onTimerStep, 1000);
+	}
 }
 
 function onTimerEnd(){
@@ -20,6 +22,7 @@ function onTimerEnd(){
 
 function onTimerStep(){
 	spielStatus.time -= 1;
+	$("#timePBar").progressbar({"value":spielStatus.time});
 	if (spielStatus.time <= 0)
 		onTimerEnd();
 }

@@ -64,11 +64,19 @@
 	height:48px;
 }
 
-.BandNameText{
-	width:100%;
-	height:100%;
-	text-align: center;
-	font-size: 38px;
+.BandNameText {
+    font-size: 38px;
+    height: 48px;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+}
+
+#timePBar{
+	/*background-color: red;*/
+	width: 20em;
+	height: 30px;
+	float: left;
 }
 
 .SpielFlaeche {
