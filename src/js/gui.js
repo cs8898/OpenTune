@@ -116,9 +116,11 @@ function Auswertungausfuehren() {
 	if (instrumente.length == 0) {
 		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Du hast doch noch gar nicht begonnen!</div>');
 	}
-	else
+	else {
+	spielStatus.status = "auswertung";
 	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
 	spieleAlleInstrumenteAb();
+	}
 }
 
 function spieleAb(ins, delay) {
