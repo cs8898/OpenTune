@@ -3,4 +3,6 @@ function startGame(){
 	generate_konkreteElemente();
 	generate_randomTuneing();
 	draw_instrument_frames();
+	berechneTime();
+	startGameTimer();
 }
