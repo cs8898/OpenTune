@@ -146,14 +146,15 @@ var schwierigkeiten = [
 
 //Konkreten Instrumente
 var instrumente = [
-	{
+	/*{
 		"id": "baritone_1",
 		"type": "baritone",
 		"tuning": -50,
 		"starttuning": -50,
 		"x": 50,
-		"y": 100
-	},
+		"y": 100,
+		"audio": null,
+	},*/
 ];
 
 //var img = "img/" + instrument.type + ".png";
