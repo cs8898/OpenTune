@@ -8,6 +8,7 @@ function fill_difficulty_sel(){
 }
 
 function startGameTimer(){
+	clearInterval(SecondTimer)
 	if (spielStatus.time > 0)
 		SecondTimer = setInterval(onTimerStep, 1000);
 }
@@ -25,5 +26,5 @@ function onTimerStep(){
 
 function berechneTime(){
 	var s = schwierigkeiten[spielStatus.schwierigkeit];
-	spielStatus.time = s.time * instrumente.length;
+	spielStatus.time = Math.round(s.time * instrumente.length);
 }
