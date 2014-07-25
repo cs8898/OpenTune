@@ -31,11 +31,7 @@
     </select><br />
     Modus:<br />
     <select id="modus_sel" size="1" class="DropDown SidebarElement" style="margin-bottom:5em">
-	<!--<option>
-        Arcade
-      </option>-->
-      </option>
-    </select><br />
+    </select><!--<br />-->
     <div id="instrumentVorlagen" class="container SidebarElement">
       <!-- <div>
         <span>This is checkbox</span> <input class="checkboxC" type="number" />
@@ -46,7 +42,7 @@
   </div>
   <div id="content">
 	<div class="BandNamediv">
-		<div id="timePBar"></div>
+		<div id="timePBar"><div id="timePBar_lable"></div></div>
 		<div class="BandNameText">
 			OpenTune
 		</div>
@@ -71,13 +67,12 @@
 					<br/>Oktave
 				</div>
 			</div>
-			<div class="centerButtons">
-				<div>
+			<div class="centerButtons" id="middle_bottom_div">
+				<div id="help_div">
 				<span id ="help_label" style="display : inline;">Hilfen: </span>
-				<p id="help_counter" style="display: inline;"></p>
+				<p id="help_counter" style="display: inline;"></p></div>
 				<br/>
 				<input id="stimmung" class="button" type="button" name="Stimmgerät" value="Stimmgerät" />
-				</div>
 				<div id="stimmgeraet" style="display: none;">
 					<table style="border: 2px #ccc inset;">
 						<td color0="#42b8b3" color1="red">-5</td>

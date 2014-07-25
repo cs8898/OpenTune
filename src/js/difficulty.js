@@ -10,19 +10,27 @@ function fill_difficulty_sel(){
 function startGameTimer(){
 	clearInterval(SecondTimer)
 	if (spielStatus.time > 0 && spielStatus.modus == "arcade"){
+		$("#timePBar").css("display","block");
 		$("#timePBar").progressbar({"min": 0, "max": spielStatus.time});
+		$("#timePBar").progressbar({"value":spielStatus.time});
+		$("#timePBar_lable").text(spielStatus.time+" Sekunden übrig");
 		SecondTimer = setInterval(onTimerStep, 1000);
+	} else if( spielStatus.modus == "training" ){
+		$("#timePBar").css("display","none");
 	}
 }
 
 function onTimerEnd(){
-	Auswertungausfuehren();
+	if (spielStatus.status == "spiel")
+		Auswertungausfuehren();
 	clearInterval(SecondTimer);
 }
 
 function onTimerStep(){
 	spielStatus.time -= 1;
 	$("#timePBar").progressbar({"value":spielStatus.time});
+	$("#timePBar_lable").text(spielStatus.time+" Sekunden übrig");
+	zeigeHilfen();
 	if (spielStatus.time <= 0)
 		onTimerEnd();
 }

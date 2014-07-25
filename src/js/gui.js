@@ -1,17 +1,15 @@
 var stimm_timeout = null;
-var helpAnzahl = null;
 
 $(document).ready(function() {
 	//setup
+	$("#middle_bottom_div").css("display","none");
 	befuelleBesetzung();
 	befuelleModus();
 	berechneHilfe();
-	zeigeHilfen();
 	befuelleInstrumentenVorlageListe();
 	//registriere events
 	$("#modus_sel").change(function(){
 		berechneHilfe();		
-		zeigeHilfen();
 	});
 	$("#besetzungen").change(function(){
 		leereInstrumentenVorlageListe();
@@ -73,23 +71,25 @@ function befuelleBesetzung() {
 }
 
 function befuelleModus() {
-	$("#modus_sel").append(new Option("Arcade", 0));
-	$("#modus_sel").append(new Option("Training", 1));
+	$("#modus_sel").append(new Option("Arcade", "arcade"));
+	$("#modus_sel").append(new Option("Training", "training"));
 }
 
 function berechneHilfe(){
-	var modus = spielStatus.modus = $("#modus_sel").val()
-	if(modus == 0)
+	if(spielStatus.modus == "arcade")
 	{
 		var s = schwierigkeiten[spielStatus.schwierigkeit];
-		helpAnzahl = Math.round(s.anzahlHilfen * instrumentVorlagen.length);	
-	}else if(modus == 1){
-		helpAnzahl = 0;
+		spielStatus.hilfen = Math.round(s.anzahlHilfen * instrumente.length);
+		$("#help_div").css("display","inline-block");		
+	}else if(spielStatus.modus == "training"){
+		spielStatus.hilfen = -1;
+		$("#help_div").css("display","none");
 	}
 }
+
 function zeigeHilfen()
 {
-		$("#help_counter").text(""+helpAnzahl);	
+		$("#help_counter").text(spielStatus.hilfen);	
 }
 
 function spieleInstrumentAb(id) {
@@ -103,7 +103,7 @@ function spieleInstrumentAb(id) {
 	spieleAb(ins, 0);
 
 	//stimmgerät
-	if($("#stimmgeraet").css("display") == "block" && helpAnzahl > 0)
+	if($("#stimmgeraet").css("display") == "block" && (spielStatus.hilfen > 0 || spielStatus.modus == "training"))
 	{
 		var stimm_element = (ins.tuning/10)+5;
 		if (stimm_element <= 0){
@@ -117,8 +117,10 @@ function spieleInstrumentAb(id) {
 		stimm_timeout = setTimeout(function(){
 			setElement(stimmgeraetProgressID,-1,true);
 		}, 4000);
-		helpAnzahl -= 1;
-		zeigeHilfen();
+		if (spielStatus.modus == "arcade"){
+			spielStatus.hilfen -= 1;
+			zeigeHilfen();
+		}
 	}
 }
 
@@ -152,9 +154,9 @@ function Auswertungausfuehren() {
 		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Du hast doch noch gar nicht begonnen!</div>');
 	}
 	else {
-	spielStatus.status = "auswertung";
-	$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
-	spieleAlleInstrumenteAb();
+		spielStatus.status = "auswertung";
+		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
+		spieleAlleInstrumenteAb();
 	}
 }
 
@@ -185,5 +187,4 @@ $(document).ready(function() {
 	spieleAb("audio/trombone-0.mp3", 1000);
 	spieleAb("audio/tuba+40.mp3", 1800);
 });
-
 */
