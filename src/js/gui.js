@@ -87,8 +87,8 @@ function spieleInstrumentAb(id) {
 	}, 4000);
 }
 
-function spieleStimmgabelAb() {
-		new Audio("audio/tuningfork442.mp3").play();
+function spieleStimmgabelAb(id) {
+		new Audio("audio/tuningfork442"+ id + ".mp3").play();
 }
 
 function aendereStimmung()
