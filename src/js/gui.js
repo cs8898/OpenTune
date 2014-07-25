@@ -155,9 +155,17 @@ function Auswertungausfuehren() {
 	}
 	else {
 		spielStatus.status = "auswertung";
-		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!</div>');
+		$(".SpielFlaeche").html('<div style="width:100%;text-align:center;padding-top:3em;">Deine Punktezahl:<br/><br/>' + Math.round(fortschritt() * 100) + ' von 100 Punkten!<br /><br />'+returnAllInstrumentTuneing()+'</div>');
 		spieleAlleInstrumenteAb();
 	}
+}
+
+function returnAllInstrumentTuneing(){
+	var temp = "";
+	for (var i = 0; i < instrumente.length; i++){
+		temp += instrumente[i].type+';'+instrumente[i].tuning+' <br />';
+	}
+	return temp;
 }
 
 function spieleAb(ins, delay) {
