@@ -15,6 +15,15 @@
   <script type="text/javascript" src="js/random.js"></script>
   <script type="text/javascript" src="js/game.js"></script>
   <script type="text/javascript" src="js/logic.js"></script>
+
+  <!-- IE warning -->
+  <script type="text/javascript">
+	var ua = window.navigator.userAgent;
+	var msie = ua.indexOf("MSIE ");
+
+	if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+		alert("Diese Seite funktioniert derzeit nicht mit dem Internet Explorer!\nBitte verwenden Sie Chrome, Firefox oder einen anderen Webbrowser.");
+  </script>
 </head>
 
 <body style="margin:0; padding: 0; border:0; width:100%; height:100%; font-family:fantasy ;">

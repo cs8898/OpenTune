@@ -1,4 +1,4 @@
-var instrument_frame_width = 94;
+var instrument_frame_width = 104;
 var instrument_frame_height = 84;
 
 function generate_konkreteElemente(){

@@ -135,5 +135,5 @@
 
 input{
 	font-family: fantasy ;
-	box-shadow: -1px -1px 2px #d5f1f0;
+	/* box-shadow: -1px -1px 2px #d5f1f0; */ /* destroys slider in chrome... */
 }
