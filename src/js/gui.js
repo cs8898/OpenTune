@@ -19,7 +19,7 @@ $(document).ready(function() {
 	$("#stimmung").click(aendereStimmung);
 });
 
-//Befüllen der Instrumentenvorlage-Liste
+//BefÃ¼llen der Instrumentenvorlage-Liste
 function befuelleInstrumentenVorlageListe() {
 	var liste = $("#instrumentVorlagen");	
 	var value = $("#besetzungen").val();
@@ -102,7 +102,7 @@ function spieleInstrumentAb(id) {
 	}
 	spieleAb(ins, 0);
 
-	//stimmgerät
+	//stimmgerÃ¤t
 	if($("#stimmgeraet").css("display") == "block" && (spielStatus.hilfen > 0 || spielStatus.modus == "training"))
 	{
 		var stimm_element = (ins.tuning/10)+5;
@@ -141,7 +141,7 @@ function aendereStimmung()
 function spieleAlleInstrumenteAb() {
 	for (var i = 0; i < instrumente.length; i++) {
 		var ins = instrumente[i];
-		//generiere zufällige verzögerung
+		//generiere zufÃ¤llige verzÃ¶gerung
 		var min = 1;
 		var max = 100;
 		var delay = (Math.random() * (max - min)) + min;
@@ -170,7 +170,7 @@ function returnAllInstrumentTuneing(){
 }
 
 function spieleAb(ins, delay) {
-	//prüfe, ob audio bereits abgespielt wurde
+	//prÃ¼fe, ob audio bereits abgespielt wurde
 	if (ins.audio != null) {
 		ins.audio.pause();
 	}
@@ -185,7 +185,7 @@ function spieleAb(ins, delay) {
 	audio += ".mp3";
 	//datei laden
 	ins.audio = new Audio(audio);
-	//verzögert abspielen
+	//verzÃ¶gert abspielen
 	setTimeout(function() {
 		ins.audio.play();
 	}, delay);
