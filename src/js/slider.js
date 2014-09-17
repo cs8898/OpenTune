@@ -4,6 +4,7 @@ function onSlide(obj){
 	var abs_val = instrumente[instr_id].starttuning + slider_val;
 	instrumente[instr_id].tuning = abs_val;
 	stopAudio(instr_id);
+    generateAudio(instrumente[instr_id]);
 }
 
 function stopAudio(instr_id)

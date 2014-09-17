@@ -171,10 +171,19 @@ function returnAllInstrumentTuneing(){
 
 function spieleAb(ins, delay) {
 	//prüfe, ob audio bereits abgespielt wurde
-	if (ins.audio != null) {
+	if (ins.audio != null)
 		ins.audio.pause();
-	}
-	//generiere Audiopfad
+	//AUDIO File Preloaded in ins.audio
+    if (ins.audio == null)
+        generateAudio(ins);
+	//verzögert abspielen
+	setTimeout(function() {
+		ins.audio.play();
+	}, delay);
+}
+
+function generateAudio(ins){
+    //generiere Audiopfad
 	var audio = "audio/" + ins.type;
 	if (ins.tuning < 0)
 		audio += ins.tuning;
@@ -185,10 +194,7 @@ function spieleAb(ins, delay) {
 	audio += ".mp3";
 	//datei laden
 	ins.audio = new Audio(audio);
-	//verzögert abspielen
-	setTimeout(function() {
-		ins.audio.play();
-	}, delay);
+    ins.audio.preload = "auto";
 }
 
 /*TEST
